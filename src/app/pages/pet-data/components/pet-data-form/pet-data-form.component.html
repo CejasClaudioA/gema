@@ -1,41 +1,44 @@
-<form class="pet-data-form" [formGroup]="petForm" (ngSubmit)="onSubmit()">
-  <mat-form-field>
-    <mat-label>Nombre</mat-label>
-    <input matInput formControlName="nombre" />
-  </mat-form-field>
-  <mat-form-field>
-    <mat-label>Especie</mat-label>
-    <input matInput formControlName="especie" />
-  </mat-form-field>
-  <mat-form-field>
-    <mat-label>Raza</mat-label>
-    <input matInput formControlName="raza" />
-  </mat-form-field>
+<mat-card class="pet-data-card">
+  <form class="pet-data-form" [formGroup]="petForm" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <mat-label>Nombre</mat-label>
+      <input matInput formControlName="nombre" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Especie</mat-label>
+      <input matInput formControlName="especie" />
+    </mat-form-field>
 
-  <mat-form-field>
-    <mat-label>Fecha de Nacimiento</mat-label>
-    <input matInput [matDatepicker]="picker" formControlName="nacimiento" />
-    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
-  </mat-form-field>
+    <mat-form-field>
+      <mat-label>Raza</mat-label>
+      <input matInput formControlName="raza" />
+    </mat-form-field>
 
-  <mat-form-field>
-    <mat-label>Genero</mat-label>
-    <mat-select formControlName="genero">
-      <mat-option value="Hembra">Hembra</mat-option>
-      <mat-option value="Macho">Macho</mat-option>
-    </mat-select>
-  </mat-form-field>
+    <mat-form-field>
+      <mat-label>Fecha de Nacimiento</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="nacimiento" />
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
 
-  <!-- 
-  <div>
-    <label for="genero">Género:</label>
-    <select id="genero" formControlName="genero">
-      <option value="">Seleccionar</option>
-      <option value="macho">Macho</option>
-      <option value="hembra">Hembra</option>
-      <option value="otro">Otro</option>
-    </select>
-  </div> -->
-  <button mat-button color="primary" type="submit">Guardar</button>
-</form>
+    <mat-form-field>
+      <mat-label>Color</mat-label>
+      <input matInput formControlName="color" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Microchip</mat-label>
+      <input matInput formControlName="microchip" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Sexo</mat-label>
+      <mat-select formControlName="sexo">
+        <mat-option value="1">Hembra</mat-option>
+        <mat-option value="2">Macho</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">Guardar</button>
+  </form>
+</mat-card>

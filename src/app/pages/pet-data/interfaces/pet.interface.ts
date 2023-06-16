@@ -3,5 +3,11 @@ export interface Pet {
   especie: string;
   raza: string;
   nacimiento: string;
-  genero: string;
+  color: string,
+  microchip: string,
+  sexo: Sexo
+}
+
+export interface Sexo {
+  id: string;
 }
