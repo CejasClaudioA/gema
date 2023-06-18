@@ -1,9 +1,24 @@
 mat-card {
     padding: 20px;
     margin-top: 20px;
+    border-radius: 15px;
 }
 
-.pet-data-form {   
+.container {
     display: flex;
     flex-direction: column;
 }
+
+.row {
+    display: flex;
+}
+
+.column {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.column:last-child {
+    margin-right: 0;
+}
+  
