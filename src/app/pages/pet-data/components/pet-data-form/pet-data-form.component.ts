@@ -3,6 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import * as moment from 'moment';
 import { PetDataService } from '../../services/pet-data.service';
 import { Pet } from '../../interfaces/pet.interface';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-pet-data-form',
@@ -29,7 +30,18 @@ export class PetDataFormComponent implements OnInit {
   }
 
   onSubmit() {
-    this.petDataService.savePet(this.buildPet()).subscribe();
+    this.petDataService.savePet(this.buildPet()).subscribe({
+        next: (item) => {
+          Swal.fire({
+            title: 'Saved',
+            text: 'Saved successfully 😼',
+            icon: 'success',
+            confirmButtonText: 'Cool'
+          })
+        },
+        error: (err) => console.log('err: ', err),
+      }
+    );
   }
 
   getFormattedDate(dateString: string): String {
